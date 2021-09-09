@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center text-white">Bienvenue dans votre repertoire de contacts</h1>
+
+    <a href="{{path('contact_liste')}}" class="btn btn-warning">Voir mes contacts</a>
+
+
+{% endblock %}
