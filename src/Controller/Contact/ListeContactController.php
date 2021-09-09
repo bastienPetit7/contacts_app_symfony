@@ -11,7 +11,6 @@ class ListeContactController extends AbstractController
     /**
      * @Route("/contact/liste", name="contact_liste")
      */
-    
      public function listeContact(ContactRepository $contactRepository)
      {
         $contacts = $contactRepository->findAll(); 

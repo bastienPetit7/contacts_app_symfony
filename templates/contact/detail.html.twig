@@ -1,20 +1,15 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Liste de Contact{% endblock %}
+{% block tiltle %}Détail du contact{% endblock %}
 
 {% block body %}
 
     <div class="row justify-content-center">
-        {% include "shared/_message_flash.html.twig" %}
-
-        <div class="col-12 mb-4">
-            <h1 class="text-center">Tous les contacts</h1>
+        <div class="col-12">
+            <h3 class="text-center">Détail du contact</h3>
         </div>
-        <hr>
-    
-        {% for contact in contacts %}
 
-        <div class="card border-info m-3" style="max-width: 20rem;">
+        <div class="card border-info m-3 mt-5" style="max-width: 40rem;">
             <div class="card-header"> {{contact.firstName}} {{contact.name}} </div>
             <div class="card-body">
                 <h4 class="card-title">tel : {{contact.phoneNumber}} </h4>
@@ -23,18 +18,11 @@
             <div class="card-footer"> Contact créé le : {{contact.createdAt | date('d:m:Y')}} </div>
             <div class="d-flex justify-content-center">
             
-            <a href=" {{path('contact_detail', {'id': contact.id} )}} " class="btn btn-info m-2 mt-3 px-3 " style="max-width: 14rem;">Voir détail</a>
+            <a href=" {{path('contact_supprimer', {'id': contact.id } )}} " class="btn btn-danger m-2 mt-3 px-3 " style="max-width: 14rem;">Supprimer Contact</a>
             </div>
         </div>
-            
-        {% endfor %}
+    
     </div>
-
-
-
-
-
-
 
 
 {% endblock %}

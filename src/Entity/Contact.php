@@ -2,11 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\ContactRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\PrePersist;
+use App\Repository\ContactRepository;
+use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
 
 /**
  * @ORM\Entity(repositoryClass=ContactRepository::class)
+ * @ORM\HasLifecycleCallbacks
  */
 class Contact
 {
@@ -36,6 +40,17 @@ class Contact
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function prePersist()
+    {
+        if(empty($this->createdAt))
+        {
+            $this->createdAt = new DateTime();
+        }
+    }
 
     public function getId(): ?int
     {
