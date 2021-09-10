@@ -8,16 +8,16 @@
         {% include "shared/_message_flash.html.twig" %}
 
         <div class="col-12 mb-4">
-            <h1 class="text-center">Tous les contacts</h1>
+            <h1 class="text-center">Tous les contacts  <i class="fas fa-users m-2"></i></h1>
         </div>
         <hr>
     
         {% for contact in contacts %}
 
         <div class="card border-info m-3" style="max-width: 20rem;">
-            <div class="card-header"> {{contact.firstName}} {{contact.name}} </div>
+            <div class="card-header"><i class="far fa-user"></i> {{contact.firstName}} {{contact.name}} </div>
             <div class="card-body">
-                <h4 class="card-title">tel : {{contact.phoneNumber}} </h4>
+                <h4 class="card-title"><i class="fas fa-phone-alt"></i> : {{contact.phoneNumber}} </h4>
                 
             </div>
             <div class="card-footer"> Contact créé le : {{contact.createdAt | date('d:m:Y')}} </div>

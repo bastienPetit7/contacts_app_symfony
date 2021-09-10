@@ -4,9 +4,14 @@
 
 {% block body %}
 
-    <h1 class="text-center text-white">Bienvenue dans votre repertoire de contacts</h1>
+    <h1 class="text-center ">App CONTACT</h1>
 
-    <a href="{{path('contact_liste')}}" class="btn btn-warning">Voir mes contacts</a>
+    <div class="row justify-content-center">
+        <h2 class="text-center"><i class="fas fa-users m-2" style="font-size: 260px;"></i></h2>
+    
+    <a href="{{path('contact_liste')}}" class="btn btn-dark text-center mt-5 border-info" style="max-width: 160px" >Entrer</a>
+
+    </div>
 
 
 {% endblock %}
